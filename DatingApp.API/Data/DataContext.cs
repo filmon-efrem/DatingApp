@@ -1,0 +1,19 @@
+using DatingApp.API.Models;
+using JetBrains.Annotations;
+using Microsoft.EntityFrameworkCore;
+
+namespace DatingApp.API.Data
+{
+    public class DataContext : DbContext
+    {
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
+            Options = options;
+        }
+
+        public DbContextOptions Options { get; }
+
+        public DbSet<Value> Values { get; set; }
+        
+    }
+}
